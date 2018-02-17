@@ -1,0 +1,23 @@
+<div>
+<p> Forecast for {{city}} </p>
+
+<hr/>
+	<div>Iterations: 
+		<a href="#!/weather/2" ng-class="{'bg-secondary' : days === '2'}">2</a> | 
+		<a href="#!/weather/5" ng-class="{'bg-secondary' : days === '5'}">5</a> | 
+		<a href="#!/weather/7" ng-class="{'bg-secondary' : days === '7'}">7</a> | 
+		<a href="#!/weather/9" ng-class="{'bg-secondary' : days === '9'}">9</a>
+	</div>
+<hr/>
+
+<div ng-repeat="list in result.list"> 
+	<div class="row">
+		<div class="col-md-12">
+			<weather-report weather-day = "list" convert-to-standard = "cnvtToF(degK)" convert-to-date = "cnvtToDate(dt)"  date-format="MMM d, y 'at' h:mma">
+			</weather-report>
+		</div>
+	</div>
+</div>
+
+<a href="#!/">Back to search</a>
+</div>
